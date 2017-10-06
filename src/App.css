@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*****/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
+
+body {
+  color: #576366;
+  background: #5fcf80;
+  margin: 0;
+  font-family: Roboto,sans-serif;
+}
+
+.container {
+  width: 95%;
+  max-width: 780px;
+  padding-bottom: 2em;
+  margin: 0 auto 2em;
+  background: #fff;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 3px rgba(0,0,0,.1);
+  box-shadow: 0 3px rgba(0,0,0,.1);
+  overflow: hidden;
+}
+
+header {
+  background: #edeff0;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 768px) and (min-width: 0){
+  .icn-logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 4px;
+  }
+}
+
+.icn-logo {
+    background: #54606b;
+    color: #fff;
+}
+
+.icn-logo i {
+  font-size: 2.45em;
+  line-height: 0;
+  margin-top: 30px;
+}
+
+.main-content {
+  padding: 1em 2em;
+}
