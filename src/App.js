@@ -108,10 +108,12 @@ class Courses extends Component {
 						<li><a href='#/courses/css'>CSS</a></li>
 						<li><a href='#/courses/javascript'>JavaScript</a></li>
 					</ul>
-
-					<ul>
-						{CurrentList}
-					</ul>
+          
+          <div>
+            <ul>
+              {CurrentList}
+            </ul>
+          </div>
 				</div>
 
 				{/* Write routes here... */}
