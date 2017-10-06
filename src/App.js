@@ -60,18 +60,42 @@ class Courses extends Component {
 		let CurrentList = null;
 		switch (route) {
 			case 'css':
-				CurrentList = ['How to Make a CSS', 'HTML CSS'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
+				CurrentList = CSSCourses.map((course) => {
+					return (
+            <li className="course media group" key={course.id}>
+              <img className="course-img" src={course.img_src} alt="course" />
+              <div>
+                <h3>{course.title}</h3>
+                <p>{course.description}</p>
+              </div>
+            </li>
+          )
 				});
 				break;
 			case 'javascript':
-				CurrentList = ['How to Make a JS', 'HTML JS'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
+				CurrentList = JSCourses.map((course) => {
+					return (
+            <li className="course media group" key={course.id}>
+              <img className="course-img" src={course.img_src} alt="course" />
+              <div>
+                <h3>{course.title}</h3>
+                <p>{course.description}</p>
+              </div>
+            </li>
+          )
 				});
 				break;
 			default: //'html'
-				CurrentList = ['How to Make a Website', 'HTML Forms'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
+				CurrentList = HTMLCourses.map((course) => {
+					return (
+            <li className="course media group" key={course.id}>
+              <img className="course-img" src={course.img_src} alt="course" />
+              <div>
+                <h3>{course.title}</h3>
+                <p>{course.description}</p>
+              </div>
+            </li>
+          )
 				});
 				break;
 		}
@@ -196,15 +220,15 @@ class App extends Component {
 				Child = Courses;
 				break;
 			case '/courses/html':
-				Child = HTML;
+				Child = Courses;
 				propsForCourses = 'html';
 				break;
 			case '/courses/css':
-				Child = CSS;
+				Child = Courses;
 				propsForCourses = 'css';
 				break;
 			case '/courses/javascript':
-				Child = JavaScript;
+				Child = Courses;
 				propsForCourses = 'javascript';
 				break;
 			default:
