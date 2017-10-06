@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TeacherList from './teachers';
+import {CSSCourses, HTMLCourses, JSCourses} from './courses';
 
 class Home extends Component {
 	render() {
@@ -95,6 +96,74 @@ class Courses extends Component {
 	}
 }
 
+
+class JavaScript extends Component {
+	render() {
+		return (
+			<div>
+        <ul>
+          {JSCourses.map((course) => {
+            return (
+              <li className="course media group" key={course.id}>
+                <img className="course-img" src={course.img_src} alt="course" />
+                <div>
+                  <h3>{course.title}</h3>
+                  <p>{course.description}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+		);
+	}
+}
+
+class CSS extends Component {
+	render() {
+		return (
+			<div>
+        <ul>
+          {CSSCourses.map((course) => {
+            return (
+              <li className="course media group" key={course.id}>
+                <img className="course-img" src={course.img_src} alt="course" />
+                <div>
+                  <h3>{course.title}</h3>
+                  <p>{course.description}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+		);
+	}
+}
+
+class HTML extends Component {
+	render() {
+		return (
+			<div>
+        <ul>
+          {HTMLCourses.map((course) => {
+            return (
+              <li className="course media group" key={course.id}>
+                <img className="course-img" src={course.img_src} alt="course" />
+                <div>
+                  <h3>{course.title}</h3>
+                  <p>{course.description}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+		);
+	}
+}
+
+
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -108,7 +177,6 @@ class App extends Component {
 			//<a href="#/about">About</a>
 			//<li><a href='#/courses/html'>HTML</a></li>
 			console.log ( window.location.hash.substr(1) );
-
 			this.setState({
 				route: window.location.hash.substr(1)
 			});
@@ -128,15 +196,15 @@ class App extends Component {
 				Child = Courses;
 				break;
 			case '/courses/html':
-				Child = Courses;
+				Child = HTML;
 				propsForCourses = 'html';
 				break;
 			case '/courses/css':
-				Child = Courses;
+				Child = CSS;
 				propsForCourses = 'css';
 				break;
 			case '/courses/javascript':
-				Child = Courses;
+				Child = JavaScript;
 				propsForCourses = 'javascript';
 				break;
 			default:
